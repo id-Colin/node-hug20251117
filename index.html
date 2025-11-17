@@ -3,720 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Network - Protect Earth</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title id="pageTitle">Explore the USA: A Journey of Infinite Possibilities</title>
     <style>
-        * {
+        /* CSS Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
         }
 
-        :root {
-            --primary: #2e7d32;
-            --secondary: #4caf50;
-            --accent: #8bc34a;
-            --light: #e8f5e9;
-            --dark: #1b5e20;
-            --text: #333333;
-            --white: #ffffff;
-        }
-
-        body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .nav-container {
+        /* Navbar Style */
+        .navbar {
+            background-color: #0d47a1; /* Deep Blue */
+            color: white;
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .logo i {
-            font-size: 2rem;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 2rem;
-        }
-
-        nav ul li a {
-            color: var(--white);
+        .navbar a {
+            color: white;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 0;
-            position: relative;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #1565c0; /* Brighter Blue */
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        
+        /* Language Switcher Styling */
+        .lang-switch button {
+            background-color: #ffc107; /* Yellow button */
+            border: none;
+            color: #333;
+            padding: 8px 12px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .lang-switch button:hover {
+            background-color: #ffecb3;
+        }
+        /* Highlight active language button */
+        .lang-switch button.active {
+            background-color: #e65100;
+            color: white;
         }
 
-        nav ul li a:hover {
-            color: var(--accent);
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-
+        /* Hero Section Style */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+            background-image: url('https://images.pexels.com/photos/3739766/pexels-photo-3739766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
             background-size: cover;
             background-position: center;
-            height: 80vh;
+            height: 500px;
             display: flex;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: var(--white);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn:hover {
-            background-color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        section {
-            padding: 5rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent);
-            border-radius: 2px;
-        }
-
-        .section-title p {
-            color: var(--text);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-img {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .about-img:hover img {
-            transform: scale(1.05);
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .stat-item i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            color: var(--text);
-        }
-
-        .initiatives {
-            background-color: var(--white);
-        }
-
-        .initiatives-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .initiative-card {
-            background-color: var(--light);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .initiative-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .initiative-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .initiative-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .initiative-card:hover .initiative-img img {
-            transform: scale(1.1);
-        }
-
-        .initiative-content {
-            padding: 1.5rem;
-        }
-
-        .initiative-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .initiative-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .cta {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
-            text-align: center;
-            padding: 5rem 0;
-        }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta .btn {
-            background-color: var(--white);
-            color: var(--primary);
-        }
-
-        .cta .btn:hover {
-            background-color: var(--accent);
-            color: var(--white);
-        }
-
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent);
-        }
-
-        .footer-column p {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links li a {
-            color: var(--light);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links li a:hover {
-            color: var(--accent);
-            padding-left: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--accent);
-            transform: translateY(-5px);
-        }
-
-        .copyright {
+            align-items: center;
+            color: white;
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); 
+        }
+        .hero-content {
+            z-index: 10;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px #000;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin-top: 0;
+            text-shadow: 1px 1px 3px #000;
         }
 
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
+        /* Content Container Style (rest of CSS remains the same) */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
         }
-
-        @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .initiatives-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .intro-section {
+            text-align: center;
+            margin-bottom: 50px;
         }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary);
-                flex-direction: column;
-                padding: 1rem 0;
-                text-align: center;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 0;
-                padding: 0.8rem 0;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .initiatives-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats {
-                grid-template-columns: 1fr;
-            }
+        .intro-section h2 {
+            color: #d32f2f;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 3px solid #fbc02d;
+            display: inline-block;
+            padding-bottom: 5px;
         }
-
-        /* Animation for stats counter */
-        .counter {
-            transition: all 0.5s ease;
+        .destinations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-content h3 {
+            color: #0d47a1;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        .card-content p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container nav-container">
-            <div class="logo">
-                <i class="fas fa-seedling"></i>
-                <span>Green Network</span>
+
+    <nav class="navbar">
+        <div class="logo" id="navLogo">USA Travel ✈️</div>
+        <div style="display: flex; align-items: center;">
+            <a href="#home" data-lang-key="navHome">Home</a>
+            <a href="#destinations" data-lang-key="navDestinations">Hot Destinations</a>
+            <a href="#contact" data-lang-key="navContact">Contact Us</a>
+            
+            <div class="lang-switch">
+                <button onclick="changeLanguage('en')" class="active" id="btn_en">EN</button>
+                <button onclick="changeLanguage('zh')" id="btn_zh">中</button>
+                <button onclick="changeLanguage('ja')" id="btn_ja">日</button>
             </div>
-            <nav>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#initiatives">Initiatives</a></li>
-                    <li><a href="#get-involved">Get Involved</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1 data-lang-key="heroTitle">Explore the USA: A Journey of Infinite Possibilities</h1>
+            <p data-lang-key="heroSubtitle">From bustling cities to natural wonders, start your dream vacation.</p>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1>Protect Our Planet, Preserve Our Future</h1>
-            <p>Join the global movement to create a sustainable world through conservation, education, and community action.</p>
-            <a href="#get-involved" class="btn">Join Our Network</a>
-        </div>
-    </section>
+    <main class="container">
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Green Network</h2>
-                <p>We are a global community dedicated to environmental protection and sustainable development.</p>
-            </div>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team planting trees">
-                </div>
-                <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Green Network is committed to creating a sustainable future by protecting natural ecosystems, promoting renewable energy, and empowering communities to take environmental action.</p>
-                    <p>Founded in 2010, we've grown from a small grassroots organization to an international network with over 50,000 members across 120 countries.</p>
-                    <p>Our approach combines scientific research, community engagement, and policy advocacy to address the most pressing environmental challenges of our time.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
-            </div>
-            <div class="stats">
-                <div class="stat-item">
-                    <i class="fas fa-tree"></i>
-                    <h3 class="counter" data-target="2500000">0</h3>
-                    <p>Trees Planted</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <h3 class="counter" data-target="50000">0</h3>
-                    <p>Active Members</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-globe-americas"></i>
-                    <h3 class="counter" data-target="120">0</h3>
-                    <p>Countries Reached</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-recycle"></i>
-                    <h3 class="counter" data-target="1500">0</h3>
-                    <p>Cleanup Projects</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section class="intro-section">
+            <h2 data-lang-key="introTitle">🌍 An Extraordinary Experience Across the Continent</h2>
+            <p data-lang-key="introText">The United States is a nation defined by its diverse cultures, spectacular landscapes, and spirit of innovation. Here, you can experience the financial pulse of New York, the starlit boulevards of Los Angeles, the vastness of the Grand Canyon, or the volcanic beaches of Hawaii. Every stop is a unique discovery.</p>
+        </section>
 
-    <!-- Initiatives Section -->
-    <section class="initiatives" id="initiatives">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Initiatives</h2>
-                <p>Discover the key programs and projects we're implementing to protect our planet.</p>
-            </div>
-            <div class="initiatives-grid">
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://dialogue.earth/content/uploads/2021/04/lessons-from-the-rush-to-reforest-china-dialogue-2400x1599.jpg" alt="Reforestation">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Global Reforestation</h3>
-                        <p>Planting millions of trees worldwide to restore ecosystems, combat climate change, and protect biodiversity.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Ocean Conservation">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Ocean Conservation</h3>
-                        <p>Protecting marine ecosystems, reducing plastic pollution, and promoting sustainable fishing practices.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Renewable Energy">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Renewable Energy</h3>
-                        <p>Promoting solar, wind, and other clean energy sources to reduce dependence on fossil fuels.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta" id="get-involved">
-        <div class="container">
-            <h2>Join Our Global Movement</h2>
-            <p>Together, we can create a sustainable future for generations to come. Every action counts, no matter how small.</p>
-            <a href="#" class="btn">Become a Member</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Green Network</h3>
-                    <p>We are dedicated to protecting our planet through collaborative action, education, and sustainable solutions.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#initiatives">Initiatives</a></li>
-                        <li><a href="#get-involved">Get Involved</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Our Programs</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Reforestation</a></li>
-                        <li><a href="#">Ocean Cleanup</a></li>
-                        <li><a href="#">Wildlife Protection</a></li>
-                        <li><a href="#">Climate Education</a></li>
-                        <li><a href="#">Sustainable Agriculture</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Copper Creek Drive, New York</p>
-                    <p><i class="fas fa-phone"></i> +1 (312) 171-0771</p>
-                    <p><i class="fas fa-envelope"></i> support@greennetwork.org</p>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Green Network. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('active');
-        });
-
-        // Counter Animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            const speed = 200; // The lower the slower
+        <section class="destinations" id="destinations">
             
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                
-                const inc = target / speed;
-                
-                if(count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target;
+            <article class="card">
+                <img src="https://images.pexels.com/photos/2034335/pexels-photo-2034335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="New York City Skyline">
+                <div class="card-content">
+                    <h3 data-lang-key="card1Title">🗽 New York City (NYC)</h3>
+                    <p data-lang-key="card1Text">The "Capital of the World," featuring the neon lights of Times Square, the iconic Statue of Liberty, and the urban oasis of Central Park. Experience unparalleled art, cuisine, and shopping.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://images.pexels.com/photos/1010729/pexels-photo-1010729.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Grand Canyon View">
+                <div class="card-content">
+                    <h3 data-lang-key="card2Title">⛰️ Grand Canyon</h3>
+                    <p data-lang-key="card2Text">Arizona's natural wonder, carved by the Colorado River over millions of years. Its massive scale and vibrant colors are a silent testament to Earth's history.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://images.pexels.com/photos/1769300/pexels-photo-1769300.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Santa Monica Pier Los Angeles">
+                <div class="card-content">
+                    <h3 data-lang-key="card3Title">⭐️ Los Angeles (LA)</h3>
+                    <p data-lang-key="card3Text">A sunny Southern California city and the home of Hollywood. Enjoy the beaches, visit film studios, and search for your idol's handprints on the Walk of Fame.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://images.pexels.com/photos/5923831/pexels-photo-5923831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Yellowstone National Park Geothermal Feature">
+                <div class="card-content">
+                    <h3 data-lang-key="card4Title">🔥 Yellowstone National Park</h3>
+                    <p data-lang-key="card4Text">The world's first national park, famous for its magnificent geysers, hot springs, and wildlife. It is the perfect blend of outdoor adventure and geological wonder.</p>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer class="footer" id="contact">
+        <p data-lang-key="footerText">&copy; 2025 USA Travel. All rights reserved. | Explore more, contact us!</p>
+    </footer>
+    
+    <script>
+        // --- 1. 定义语言字典 ---
+        const translations = {
+            'en': {
+                'pageTitle': 'Explore the USA: A Journey of Infinite Possibilities',
+                'navLogo': 'USA Travel ✈️',
+                'navHome': 'Home',
+                'navDestinations': 'Hot Destinations',
+                'navContact': 'Contact Us',
+                'heroTitle': 'Explore the USA: A Journey of Infinite Possibilities',
+                'heroSubtitle': 'From bustling cities to natural wonders, start your dream vacation.',
+                'introTitle': '🌍 An Extraordinary Experience Across the Continent',
+                'introText': 'The United States is a nation defined by its diverse cultures, spectacular landscapes, and spirit of innovation. Here, you can experience the financial pulse of New York, the starlit boulevards of Los Angeles, the vastness of the Grand Canyon, or the volcanic beaches of Hawaii. Every stop is a unique discovery.',
+                'card1Title': '🗽 New York City (NYC)',
+                'card1Text': 'The "Capital of the World," featuring the neon lights of Times Square, the iconic Statue of Liberty, and the urban oasis of Central Park. Experience unparalleled art, cuisine, and shopping.',
+                'card2Title': '⛰️ Grand Canyon',
+                'card2Text': "Arizona's natural wonder, carved by the Colorado River over millions of years. Its massive scale and vibrant colors are a silent testament to Earth's history.",
+                'card3Title': '⭐️ Los Angeles (LA)',
+                'card3Text': 'A sunny Southern California city and the home of Hollywood. Enjoy the beaches, visit film studios, and search for your idol\'s handprints on the Walk of Fame.',
+                'card4Title': '🔥 Yellowstone National Park',
+                'card4Text': 'The world\'s first national park, famous for its magnificent geysers, hot springs, and wildlife. It is the perfect blend of outdoor adventure and geological wonder.',
+                'footerText': '&copy; 2025 USA Travel. All rights reserved. | Explore more, contact us!',
+            },
+            'zh': {
+                'pageTitle': '探索美利坚：无限可能之旅',
+                'navLogo': '美利坚之旅 ✈️',
+                'navHome': '首页',
+                'navDestinations': '热门景点',
+                'navContact': '联系我们',
+                'heroTitle': '探索美利坚：无限可能之旅',
+                'heroSubtitle': '从繁华都市到自然奇观，开启您的梦想旅程。',
+                'introTitle': '🌍 跨越大陆的非凡体验',
+                'introText': '美国，一个由多元文化、壮丽地貌和创新精神构成的国家。在这里，您可以体验纽约的金融脉搏、洛杉矶的星光大道、亚利桑那的大峡谷，或是夏威夷的火山海滩。每一次驻足，都是一次独特的探索。',
+                'card1Title': '🗽 纽约市 (New York)',
+                'card1Text': '世界之都，拥有时代广场的霓虹灯、自由女神像的象征意义，以及中央公园的城市绿洲。体验无与伦比的艺术、美食和购物。',
+                'card2Title': '⛰️ 大峡谷 (Grand Canyon)',
+                'card2Text': '亚利桑那州的自然奇观，科罗拉多河经过数百万年的切割形成。其壮观的规模和色彩是地球历史的无声见证。',
+                'card3Title': '⭐️ 洛杉矶 (Los Angeles)',
+                'card3Text': '阳光明媚的南加州城市，好莱坞的所在地。享受海滩、参观电影制片厂、在星光大道上寻找偶像的手印。',
+                'card4Title': '🔥 黄石国家公园 (Yellowstone)',
+                'card4Text': '世界上第一个国家公园，以其壮观的间歇泉、温泉和野生动物而闻名。是户外探险和地质奇观的完美结合。',
+                'footerText': '&copy; 2025 美利坚之旅. 版权所有. | 探索更多精彩，联系我们!',
+            },
+            'ja': {
+                'pageTitle': 'アメリカ合衆国を探索：無限の可能性の旅',
+                'navLogo': 'アメリカ旅行 ✈️',
+                'navHome': 'ホーム',
+                'navDestinations': '人気スポット',
+                'navContact': 'お問い合わせ',
+                'heroTitle': 'アメリカ合衆国を探索：無限の可能性の旅',
+                'heroSubtitle': '賑やかな都市から自然の驚異まで、夢の旅を始めましょう。',
+                'introTitle': '🌍 大陸を横断する非日常体験',
+                'introText': 'アメリカは、多様な文化、壮大な地形、そして革新の精神によって築かれた国です。ニューヨークの金融の中心地、ロサンゼルスのハリウッド、アリゾナのグランドキャニオン、ハワイの火山ビーチなど、あらゆる場所で独自の探索が待っています。',
+                'card1Title': '🗽 ニューヨーク市 (NYC)',
+                'card1Text': '世界の首都。タイムズスクエアのネオン、自由の女神の象徴、セントラルパークの都会のオアシスがあります。比類のないアート、グルメ、ショッピングを体験してください。',
+                'card2Title': '⛰️ グランドキャニオン',
+                'card2Text': 'コロラド川が何百万年もかけて削り出した、アリゾナ州の自然の驚異。その壮大なスケールと色彩は、地球の歴史を静かに物語っています。',
+                'card3Title': '⭐️ ロサンゼルス (LA)',
+                'card3Text': 'ハリウッドがある日当たりの良い南カリフォルニアの都市。ビーチを楽しみ、映画スタジオを訪れ、ウォーク・オブ・フェイムでお気に入りのアイドルの手形を探しましょう。',
+                'card4Title': '🔥 イエロー・ストーン国立公園',
+                'card4Text': '世界初の国立公園。壮大な間欠泉、温泉、野生動物で有名です。アウトドアアドベンチャーと地質学的な驚異が完璧に融合しています。',
+                'footerText': '&copy; 2025 アメリカ旅行. 無断複写・転載を禁じます. | さらに探索、お問い合わせはこちら！',
+            }
+        };
+
+        // --- 2. 核心切换函数 ---
+        function changeLanguage(lang) {
+            const currentTranslation = translations[lang];
+            
+            // 1. 更新 Title 标签
+            document.getElementById('pageTitle').textContent = currentTranslation['pageTitle'];
+            
+            // 2. 更新 lang 属性 (提高可访问性)
+            document.documentElement.lang = lang;
+
+            // 3. 遍历所有带有 data-lang-key 属性的元素并更新其内容
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (currentTranslation[key]) {
+                    // 对于锚点标签 (a)，只更新文本内容，不更新 data-lang-key
+                    if (element.tagName === 'A') {
+                        element.textContent = currentTranslation[key];
+                    } 
+                    // 对于页脚 (footer) 或其他可能包含 HTML 实体的内容
+                    else if (element.id === 'navLogo' || element.parentNode.tagName === 'FOOTER') {
+                        element.innerHTML = currentTranslation[key];
+                    }
+                    // 对于其他标签，直接更新文本
+                    else {
+                        element.textContent = currentTranslation[key];
+                    }
                 }
             });
+
+            // 4. 突出显示当前激活的按钮
+            document.querySelectorAll('.lang-switch button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.getElementById(`btn_${lang}`).classList.add('active');
         }
 
-        // Initialize counters when page loads
-        window.addEventListener('load', animateCounters);
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    document.querySelector('nav ul').classList.remove('active');
-                }
-            });
+        // 5. 页面加载完成后，设置默认语言为英文（或您希望的语言）
+        document.addEventListener('DOMContentLoaded', () => {
+            changeLanguage('en'); 
         });
-    </script>
-</body>
 
+    </script>
+
+</body>
 </html>
